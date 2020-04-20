@@ -1,0 +1,11 @@
+<form>
+    <input type="text" placeholder="Agregá tarea" [(ngModel)] ="tarea" name="tarea" value ="tarea">
+    <input type="number" placeholder="Usuario" [(ngModel)]="userId" name="userId" value = "userId">
+    <span>Estado</span>
+    <select [(ngModel)]="status" name="status">
+        <option value="false">Undone</option>
+        <option value="true">Done</option>
+    </select>
+
+    <button mat-raised-button color="primary" (click)="modifyToDo(id,tarea,userId,status)">Modificar Tarea</button>
+</form>

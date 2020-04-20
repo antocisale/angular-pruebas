@@ -17,7 +17,8 @@ import { PeopleListComponent } from './Components/people-list/people-list.compon
 import { HeaderComponent } from './Components/header/header.component';
 import { UserCardComponent } from './Components/user-card/user-card.component';
 import { CardContainerComponent } from './Components/card-container/card-container.component';
-
+import { ApiTable2Component } from './Components/api-table2/api-table2.component';
+import { FormAddComponent } from './Components/form-add/form-add.component';
 
 
 // SERVICIOS
@@ -41,6 +42,7 @@ const appRoutes: Routes =[
   {path: "semaforo", component: SemafotoComponent },
   {path: "todos", component: TodosTableComponent },
   {path: "user-card", component: CardContainerComponent},
+  {path: "tabla2", component:ApiTable2Component}
   
   
 ] 
@@ -56,6 +58,8 @@ import {booleanToLetters} from './Pipes/booleanToLetters.pipe';
 
 //DIRECTIVAS
 import { CompletedToDo } from './diretives/completedToDo.directive';
+import { FormEditComponent } from './Components/form-edit/form-edit.component';
+
 
 
 
@@ -75,6 +79,9 @@ import { CompletedToDo } from './diretives/completedToDo.directive';
     CardContainerComponent,
     booleanToLetters,
     CompletedToDo,
+    ApiTable2Component,
+    FormAddComponent,
+    FormEditComponent,
 
   
   ],

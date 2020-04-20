@@ -1,0 +1,38 @@
+<p>Cantidad de tareas en la lista: {{tareas.length}}</p>
+<table>
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Tarea</th>
+            <th>Completed</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarea of tareas" [completedToDo]='tarea.completed' >
+            <td>{{tarea.userId}}</td>
+            <td>{{tarea.title}}</td>
+            <td>{{tarea.completed | booleanToLetters}}</td>
+            <td><button (click)="edit(tarea.id)"><fa-icon [icon]="faPencilAlt"></fa-icon></button></td>
+            <td><button (click)="deleteToDo(tarea.id)"><fa-icon [icon]="faTrashAlt"></fa-icon></button></td>
+        </tr>
+    </tbody>
+
+</table>
+
+<button (click)="activateModal('AGREGAR')">New To Do</button>
+
+<div [ngSwitch]="opciones">
+    <div *ngSwitchCase="'AGREGAR'">
+        <app-form-add [tareas] = "tareas"></app-form-add>
+    </div>
+    <div  *ngSwitchCase="'EDITAR'">
+        <app-form-edit [tareas] = tareas [userId] = "userId" [tarea] = "tarea" [estado] = "estado" [id]="id"></app-form-edit>
+    </div>
+    <span *ngSwitchDefault></span>
+</div>
+
+
+
+
+<p>{{errorMessage}}</p>

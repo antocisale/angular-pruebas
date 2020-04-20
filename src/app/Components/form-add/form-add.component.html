@@ -1,0 +1,5 @@
+<form>
+    <input type="text" placeholder="Agregá tarea" [(ngModel)] ="tarea" name="tarea" value ="tarea">
+    <input type="number" placeholder="Usuario" [(ngModel)]="userId" name="userId" value = "userId">
+    <button mat-raised-button color="primary" (click)="addTarea(tarea,userId)">Agregar Tarea</button>
+</form>
