@@ -1,0 +1,19 @@
+<p>form-first works!</p>
+
+<form>
+    <label for="name" [class] = "labelNameClass">Name</label>
+    <input type="text" id="name" #name placeholder="type your name" [value] = "defaultName" (change)="setName($event.target.value)">
+    <br>
+    <label for ="mail" [class] = "labelMailClass">E-mail</label>
+    <input type="email" id="mail" placeholder="me@email.com" [value] = "defaultMail" (change)="setMail($event.target.value)">
+    <br>
+    <button disabled = true (click)="sendForm(name.value)">Send</button>
+    <button (click)="resetForm()">Reset</button>
+</form>
+
+<p>{{status}}</p>
+
+
+
+
+

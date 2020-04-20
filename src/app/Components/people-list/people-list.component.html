@@ -1,0 +1,17 @@
+<p>people-list works!</p>
+
+
+<table class="tabla">
+    <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+    </tr>
+    <tr *ngFor="let persona of lista">
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.edad}}</td>
+    </tr>
+</table>
+<br>
+<input type="text" placeholder="nombre" (change)="setName($event.target.value)" [value]="newName">
+<input type="number" placeholder="edad" min="0" (change)="setAge($event.target.value)" [value]="newAge">
+<button (click)="addPerson()">Agregar Persona</button>

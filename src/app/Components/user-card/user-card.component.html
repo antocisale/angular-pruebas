@@ -1,0 +1,9 @@
+<div class="container">
+    <img [src]="avatar" alt="imagen del usuario">
+    <p class="username">{{username}}</p>
+    <p class="name">{{name}}</p>
+
+    <input type="text" (change)="changing($event.target.value)" value={{username}}>
+    <input type="text" (change)="name = $event.target.value" value ={{name}}>
+    <button (click)="makeSubscription()">Suscribirme</button>
+</div>

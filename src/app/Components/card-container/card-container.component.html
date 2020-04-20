@@ -1,0 +1,3 @@
+
+<app-user-card (subscribed)="userSubscribed($event)" *ngFor="let usuario of userData" [nombre]="usuario.nombre" [user]="usuario.user" [foto]="usuario.avatar">
+</app-user-card>

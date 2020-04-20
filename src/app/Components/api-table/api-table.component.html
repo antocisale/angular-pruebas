@@ -1,0 +1,54 @@
+<p>api-table works!</p>
+
+<p>Cantidad de tareas en la lista: {{tareas.length}}</p>
+<table>
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Tarea</th>
+            <th>Completed</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarea of tareas" [completedToDo]='tarea.completed' >
+            <td>{{tarea.userId}}</td>
+            <td>{{tarea.title}}</td>
+            <td>{{tarea.completed | booleanToLetters}}</td>
+            <td><button (click)="edit(tarea.id)"><fa-icon [icon]="faPencilAlt"></fa-icon></button></td>
+            <td><button (click)="deleteToDo(tarea.id)"><fa-icon [icon]="faTrashAlt"></fa-icon></button></td>
+        </tr>
+    </tbody>
+
+</table>
+
+<button (click)="activateModal('AGREGAR')">New To Do</button>
+
+<div [ngSwitch]="opciones">
+    <div *ngSwitchCase="'AGREGAR'">
+        <form>
+            <input type="text" placeholder="Agregá tarea" [(ngModel)] ="tarea" name="tarea" value ="tarea">
+            <input type="number" placeholder="Usuario" [(ngModel)]="userId" name="userId" value = "userId">
+            <button mat-raised-button color="primary" (click)="addTarea(tarea,userId)">Agregar Tarea</button>
+        </form>
+    </div>
+    <div  *ngSwitchCase="'EDITAR'">
+        <form>
+            <input type="text" placeholder="Agregá tarea" [(ngModel)] ="tarea" name="tarea" value ="tarea">
+            <input type="number" placeholder="Usuario" [(ngModel)]="userId" name="userId" value = "userId">
+            <span>Estado</span>
+            <select [(ngModel)]="estado" name="estado">
+                <option value="false">Undone</option>
+                <option value="true">Done</option>
+            </select>
+        
+            <button mat-raised-button color="primary" (click)="modifyToDo(id,tarea,userId,estado)">Modificar Tarea</button>
+        </form>
+    </div>
+    <span *ngSwitchDefault></span>
+</div>
+
+
+
+
+<p>{{errorMessage}}</p>

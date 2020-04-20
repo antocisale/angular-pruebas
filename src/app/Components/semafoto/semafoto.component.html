@@ -1,0 +1,10 @@
+<p>semaforo works!</p>
+
+<button (click)="changeLight()">cambiá la luz</button>
+
+<div [ngSwitch]="lightStatus">
+    <div *ngSwitchCase="'GREEN'">Podés Pasar</div>
+    <div *ngSwitchCase="'YELLOW'">Ya casi...</div>
+    <div *ngSwitchCase="'RED'">Esperá</div>
+    <div *ngSwitchDefault>ROTO</div>
+</div>

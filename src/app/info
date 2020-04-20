@@ -1,0 +1,18 @@
+<!-- <app-comunicacion (childEvent)="messageChildToParent=$event" [parentDataToChild]="dataToChildFromParent">
+    <p>{{messageChildToParent}}</p>
+</app-comunicacion> -->
+
+
+<form>
+    <label>
+        <span>Tarea:</span>
+        <input type="text"  [(ngModel)] ="tarea" name="modtarea" value ="tarea">
+    </label>
+    <label>
+        <span>Usuario:</span>
+        <input type="number" [(ngModel)]="userId" name="moduserId" value = "userId">
+    </label>
+    
+
+    <button mat-raised-button color="primary" (click)="modifyToDo(id,tarea,userId,status)">Modificar Tarea</button>
+</form>

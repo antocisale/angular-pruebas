@@ -1,0 +1,15 @@
+<p>form2 works!</p>
+
+<form id="hola">
+    <label for="name">Name</label>
+    <input type="text" id="name" #name placeholder="type your name">
+    <br>
+    <label for ="mail">E-mail</label>
+    <input type="email" id="mail" #mail placeholder="me@email.com">
+    <br>
+    <button   (click)="sendForm(name.value, mail.value)" mat-button color="primary">Send</button>
+</form>
+
+<p>{{status}}</p>
+
+
